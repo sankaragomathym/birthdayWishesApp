@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <title>Birthday Baby Iniyan | Welcome</title>
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+
+    <div class="main">
+
+      <div class="index-container">
+
+        <div class="index-heading">
+          <div><img id="mickeyImage" src="images/mickey.jpg" alt="Birthday Boy" /></div>
+          <h1>It's Mickey's Birthday!!</h1>
+          <p>Your wishes will make his day special.</p>
+        </div>
+
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
+
+      </div>
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.21.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.21.0/firebase-auth.js"></script>
+
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

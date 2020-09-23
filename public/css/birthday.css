@@ -1,0 +1,547 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+
+	font-family: 'Poppins', arial;
+	font-size: 1em;
+	user-select: none;
+}
+
+input, textarea, button {
+	font-family: 'Poppins', arial;
+	font-size: 1em;
+}
+
+#pageLoader {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	font-weight: 600;
+}
+
+.main {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+header {
+    width: 100%;
+	height: 60px;
+	padding: 15px;
+	
+	display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container {
+	width: 1120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 500;
+}
+
+.left, .right {
+	width: 50%;
+	padding: 20px;
+    margin: 0 20px;
+}
+
+h1 {
+	font-size: 3em;
+	line-height: 1.2em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+li {
+	padding: 10px 0;
+}
+
+.heading {
+    margin: 25px 0;
+	text-align: center;
+	color: #FD151B;
+}
+
+.bold-text {
+	font-weight: 700;
+}
+
+.form-container {
+	padding: 20px 40px 40px;
+	background-color: #FFFFFF;
+	border-radius: 8px;
+	box-shadow: 0 8px 0 0 rgba(0,0,0,0.2);
+}
+
+input, input:focus, input:active, textarea {
+	outline: none;
+}
+
+input[type="text"], textarea {
+	width: 100%;
+	height: 56px;
+	border: 1px solid #DDDDDD;
+	border-radius: 5px;
+	padding: 15px 30px;
+	margin-top: 20px;
+
+	font-weight: 600;
+	caret-color: hsl(248, 32%, 49%);
+	background: none;
+}
+
+input[type="text"]:focus, input[type="text"]:active, textarea:focus, textarea:active {
+	border: 1px solid hsl(248, 32%, 49%);
+	color: hsl(249, 10%, 26%);
+}
+
+textarea {
+	height: 200px;
+	resize: none;
+	overflow-y: scroll;
+
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+textarea::-webkit-scrollbar {
+	display: none;
+}
+
+.counter-cont {
+    width: 100%;
+    font-size: 0.8em;
+    text-align: right;
+}
+
+#charCountSpan {
+	display: inline-block;
+	width: 30px;
+}
+
+input[type="file"] {
+	width: 100%;
+}
+
+
+.form-input-holder {
+	width: 100%;
+	padding: 30px;
+	border: 1px solid #DDDDDD;
+	border-radius: 5px;
+	margin-top: 20px;
+
+	font-size: 1em;
+	font-weight: 600;
+}
+
+.field-title {
+	margin-bottom: 10px;
+	color: #666666;
+}
+
+#viewPermissionCont {
+	border-top: 1px solid #DDDDDD;
+	margin-top: 20px;
+	padding-top: 20px;
+}
+
+#viewPermissionCont span {
+	display: block;
+	margin-bottom: 10px;
+} 
+
+#viewPermissionCont label {
+	display: block;
+	font-weight: 400;
+}
+
+#themeCont label {
+	position: relative;
+	cursor: pointer;
+	margin: 10px;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+}
+
+input[name="theme"] {
+	visibility: hidden;
+	opacity: 0;
+}
+
+input[name="theme"]:checked ~ span{
+	outline: 2px solid black;
+}
+
+#themeCont label > span {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 50px;
+	height: 50px;
+	border: 2px solid #FFFFFF;
+}
+
+input[type="text"]:hover, textarea:hover, #photoUploadCont:hover, #themeCont:hover {
+	border: 1px solid hsl(246, 25%, 77%);
+}
+
+.button-holder {
+	width: 100%;
+	margin-top: 30px;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+button, #submitButton {
+	font-weight: 600;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	
+	transform: scale(1, 1);
+}
+
+#signOut, #momSketch {
+    font-size: 0.8em;
+    padding: 10px 20px;
+}
+
+#momSketch {
+	display: none;
+	background-color: #ffcc00;
+}
+
+#previewButton, #submitButton {
+	text-transform: uppercase;
+	width: 45%;
+	height: 56px;
+}
+
+#submitButton {
+	background-color: #008CBA;
+	color: #FFFFFF;
+}
+
+#previewButton {
+	background-color: #f3f3f3;;
+	color: #008CBA;
+	border: 1px solid #008CBA;
+}
+
+button:hover, #submitButton:hover {
+	opacity: 0.8;
+}
+
+button:active, #submitButton:active {
+  transform: scale(0.8, 0.8);
+}
+
+
+.form-container p {
+	font-size: 0.8em;
+    color: #888888;
+    margin: 20px 0 0;
+    text-align: center;
+}
+
+.input-field.error {
+	border: 1px solid hsl(0, 100%, 74%);
+	color: hsl(0, 100%, 74%);
+	background: url("../images/icon-error.svg") no-repeat right 30px top 15px;
+}
+
+
+
+/* Dialog */
+
+.dialog-overlay {
+	width: 100%;
+	height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+	z-index: 2;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.close {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	
+    background: none;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+#singleWishCard {
+	width: 500px;
+    background-color: #FFFFFF;
+    max-height: 100vh;
+	overflow-y: scroll;
+	
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+#singleWishCard::-webkit-scrollbar {
+	display: none;
+}
+
+#progressBar {
+	width: 500px;
+    background-color: #FFFFFF;
+	text-align: center;
+	padding: 20px;
+}
+
+.card-cont {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 30px;
+}
+
+.wisher-photo {
+	width: 100%;
+	height: 300px;
+	position: relative;
+}
+
+.wisher-photo img {
+	max-width: 100%;
+	max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none; /* prevents save image */
+}
+
+.wisher-message {
+	margin: 20px 0;
+	color: #000000;
+	font-weight: 600;
+}
+
+.wisher-signature {
+	padding-top: 20px;
+	border-top: 1px solid #DDDDDD;
+	color: #000000;
+}
+
+.compliment {
+	font-style: italic;
+}
+
+.wisher-name {
+	font-weight: 700;
+	margin-right: 20px;
+}
+
+
+/* Gallery */
+
+.search-cont {
+	width: 80%;
+	margin: 30px auto;
+	background: #101010;
+	color: rgba(0,0,0,0.2);
+	position: relative;
+}
+
+.search-icon, .search-close {
+	position: absolute;
+	top: 14px;
+	font-size: 20px;
+	color: #cccccc;
+}
+
+.search-icon {
+	left: 15px;
+}
+
+.search-close {
+	right: 15px;
+}
+
+.search-cont input {
+	margin: auto;
+	padding: 15px 50px;
+	color: #cccccc;
+}
+
+.search-cont input:focus, .search-cont input:active {
+	color: #cccccc;
+	border: 1px solid #DDDDDD;
+}
+
+.search-cont input:hover {
+	border: 1px solid #FFFFFF;
+}
+
+.search-result {
+	color: #cccccc;
+	font-weight: 600;
+}
+
+.gallery-cont {
+	width: 100%;
+	min-height: 100vh;
+}
+
+.wishcard-cont, .search-result {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.wishcard {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+
+	width: 350px;
+	height: 500px;
+	border-radius: 3px;
+	box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.2);
+	margin: 30px;
+}
+
+.wishcard .wisher-photo {
+	height: 250px;
+}
+
+:root {
+	/* Not my favorite that line-height has to be united, but needed */
+	--lh: 1.5rem;
+}
+
+.wishcard .wisher-message {
+	--max-lines: 4;
+
+	 /* Fallback for non-webkit */
+	display: block;
+	min-height: calc(var(--lh) * var(--max-lines));
+
+	display: -webkit-box;
+	-webkit-line-clamp: var(--max-lines);
+	-webkit-box-orient: vertical;
+	
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+.wishcard .wisher-signature {
+	display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+/* Themes and backgrounds */
+
+.pink-bg {
+	background: url("../images/pink-bg.svg") repeat center center / cover; /* background by SVGBackgrounds.com */
+	background-color: rgb(204, 85, 119); 
+}
+
+.blue-bg {
+	background: url("../images/blue-bg.svg") repeat center center / cover; /* background by SVGBackgrounds.com */
+	background-color: rgb(0, 183, 255);
+}
+
+.red-bg {
+	background: url("../images/red-bg.svg") repeat center center / cover; /* background by SVGBackgrounds.com */
+	background-color: rgb(225, 19, 9);
+}
+
+.green-bg {
+	background: url("../images/green-bg.svg") repeat center center / cover; /* background by SVGBackgrounds.com */
+	background-color: rgb(59, 238, 80);
+}
+
+.yellow-bg {
+	background: url("../images/yellow-bg.svg") repeat center center; /* background by SVGBackgrounds.com */
+	background-color: #ffcc00; 
+}
+
+.black-bg {
+	background: url("../images/black-bg.svg") repeat center center; /* background by SVGBackgrounds.com */
+	background-color: #101010;
+}
+
+
+/* end - common */
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.hide {
+	display: none;
+}
+
+@media only screen and (max-width: 1100px) {
+
+	.container {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.left, .right {
+		width: 560px;
+	}
+
+	h2, .left p {
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+
+	.left, .right, #singleWishCard, #progressBar {
+		width: 100%;
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+}
+

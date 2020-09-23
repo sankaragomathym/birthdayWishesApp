@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <title>Birthday Baby Iniyan | Home</title>
+
+  <link rel="stylesheet" type="text/css" href="css/birthday.css">
+  
+  <script src="https://kit.fontawesome.com/eea31c4faf.js" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+
+  
+
+  <div class="main yellow-bg">
+
+    <div id="pageLoader">Loading...</div>
+
+    <header class="hide">
+        <button id="signOut">Sign Out</button>
+    </header>
+    
+    <div class="container hide" id="wishForm">
+
+      <div class="left">
+
+        <h3>Before getting started, have a look at the following:</h3>
+
+        <ul>
+          <li>You can include the names of the people who want to wish, in the name field.</li>
+          <li>Uploading your photo is your choice. But it would be great if you do!</li>
+          <li>Your photo remains secured.</li>
+          <li>You can upload your individual photo or a group photo of those who want to wish.</li>
+          <li>
+            You can choose who can view it.
+            <ol>
+              <li><span class="bold-text">Only Mickey</span> - and his family can view</li>
+              <li><span class="bold-text">All his relatives and friends</span> - who wish him through this app can view. This is a closed group. So feel free to choose this option.</li>
+            </ol>
+          </li>
+          <li>Choose a theme and preview how your greetings look like.</li>
+          <li>Submit your greetings and tada!</li>
+        </ul>
+
+      </div>
+
+      <div class="right">
+        
+        <div class="heading"><h2>Your Wishes and Blessings</h2></div>
+
+        <div class="form-container">
+
+          <form name="sendWish" method="post" action="gallery.html">
+
+            <div id="name-cont">
+              <input type="text"  class="input-field" name="name" placeholder="Your Name" title="Your name" data-text="Your Name" maxlength="50">
+            </div>
+
+            <div id="wish-cont">
+              <textarea  class="input-field" name="wishMessage" placeholder="Your Wishes here.." title="Your wishes" data-text="Your Wishes here.." maxlength="500"></textarea>
+              <div class="counter-cont">Character Count : <span id="charCountSpan" class="bold-text">0</span> / 500</div>
+            </div>
+            
+            <div id="photoUploadCont" class="form-input-holder">
+              <div class="field-title">Your Photo</div>
+              <label for="photoUpload">
+                <input type="file" id="photoUpload" name="photoUpload">
+              </label>
+
+              <div id="viewPermissionCont" class="hide">
+                <div class="field-title">Who can view your photo?</div>
+                <label for="onlyAdmin">
+                  <input type="radio" name="viewPermission" id="onlyAdmin" value="admin"> Only Mickey
+                </label>
+                <label for="allusers">
+                  <input type="radio" name="viewPermission" id="allUsers" value="all" checked> All his relatives and friends
+                </label>
+              </div>
+            </div>
+
+
+            <div id="themeCont" class="form-input-holder">
+              <div class="field-title">Theme</div>
+              <div>
+                <label for="pink">
+                  <input type="radio" name="theme" id="pink" value="pink" checked>
+                  <span class="pink-bg"></span>
+                </label>
+                <label for="blue">
+                  <input type="radio" name="theme" id="blue" value="blue">
+                  <span class="blue-bg"></span>
+                </label>
+                <label for="red">
+                  <input type="radio" name="theme" id="red" value="red">
+                  <span class="red-bg"></span>
+                </label>
+                <label for="green">
+                  <input type="radio" name="theme" id="green" value="green">
+                  <span class="green-bg"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="button-holder">
+              <button type="button" id="previewButton">Preview</button>
+              <input type="submit" value="Submit" id="submitButton">
+            </div>
+
+            <p><span class="bold-text">Note: </span>You can submit your wish only once.</p>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gallery-cont hide" id="gallery">
+        <div class="search-cont">
+            <span class="search-icon"><i class="fas fa-search"></i></span>
+            <input type="text" id="searchBox" name="search" placeholder="Search by Name">
+            <span class="search-close hide"><i class="fas fa-times"></i></span>
+        </div>
+
+        <div class="search-result hide"></div>
+
+        <div class="wishcard-cont"></div>
+    </div>
+
+  </div>
+
+  
+  <div class="dialog-overlay hide">
+    <div class="dialog hide" id="singleWishCard">
+
+        <div class="card-cont">
+          <div class="wisher-photo"><img alt="Photo" /></div>
+
+          <div class="wisher-message"></div>
+
+          <div class="wisher-signature">
+            <div class="compliment">With Love,</div>
+            <div class="wisher-name"></div>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="dialog hide" id="progressBar">
+      <div>Upload in progress... <span id="progressPerc"></span></div>
+    </div>
+    
+    <button class="close"><i class="fas fa-times"></i></button>
+  </div>
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/7.21.0/firebase-app.js"></script>
+  <script src="/__/firebase/7.21.0/firebase-database.js"></script>
+  <script src="/__/firebase/7.21.0/firebase-storage.js"></script>
+  <script src="/__/firebase/7.21.0/firebase-auth.js"></script>
+
+
+  <script src="js/birthday.js"></script>
+  <script src="js/formHandler.js"></script>
+  <script src="js/gallery.js"></script>
+
+</body>
+</html>
